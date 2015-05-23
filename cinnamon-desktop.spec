@@ -15,10 +15,10 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 2.4.2
-Release: %mkrel 1
+Version: 2.6.2
+Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
-Group:   Graphical desktop/Cinnamon
+Group:   Graphical desktop/Other
 URL:     http://cinnamon.linuxmint.com
 
 Source0: cinnamon-desktop-%{version}.tar.gz
@@ -118,80 +118,4 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %{_libdir}/pkgconfig/cinnamon-desktop.pc
 %{_includedir}/cinnamon-desktop/
 %{_datadir}/gir-1.0/C*-3.0.gir
-
-
-%changelog
-* Thu Nov 27 2014 joequant <joequant> 2.4.2-1.mga5
-+ Revision: 799543
-- 2.4.2
-
-* Sun Nov 23 2014 joequant <joequant> 2.4.1-1.mga5
-+ Revision: 798406
-- upgrade to 2.4
-
-* Wed Oct 15 2014 umeabot <umeabot> 2.2.3-5.mga5
-+ Revision: 745259
-- Second Mageia 5 Mass Rebuild
-
-* Sun Sep 28 2014 tv <tv> 2.2.3-4.mga5
-+ Revision: 731111
-- rebuild so that it picks typelib() requires
-
-* Thu Sep 18 2014 umeabot <umeabot> 2.2.3-3.mga5
-+ Revision: 693609
-- Rebuild to fix library dependencies
-
-* Tue Sep 16 2014 umeabot <umeabot> 2.2.3-2.mga5
-+ Revision: 678397
-- Mageia 5 Mass Rebuild
-
-* Tue Jun 10 2014 joequant <joequant> 2.2.3-1.mga5
-+ Revision: 635329
-- upgrade to 2.2.3
-
-* Thu May 15 2014 joequant <joequant> 2.2.2-1.mga5
-+ Revision: 622879
-- upgrade to 2.2.2
-
-* Fri Apr 18 2014 joequant <joequant> 2.2.0-1.mga5
-+ Revision: 616819
-- upgrade to 2.2
-
-* Wed Jan 08 2014 joequant <joequant> 2.0.4-3.mga4
-+ Revision: 565561
-- push to core/release
-
-* Wed Jan 01 2014 joequant <joequant> 2.0.4-2.mga4
-+ Revision: 563806
-- upgrade to 2.0.4
-
-* Tue Oct 22 2013 umeabot <umeabot> 2.0.1-2.mga4
-+ Revision: 542039
-- Mageia 4 Mass Rebuild
-
-* Mon Oct 14 2013 joequant <joequant> 2.0.1-1.mga4
-+ Revision: 496762
-- update to 2.0.1
-
-* Mon Oct 07 2013 joequant <joequant> 2.0.0-1.mga4
-+ Revision: 492506
-- packaged wrong source
-- update to 2.0.0
-
-* Tue Oct 01 2013 joequant <joequant> 1.9.1-1.mga4
-+ Revision: 490048
-- upgrade to 1.9.1
-
-* Thu Sep 19 2013 joequant <joequant> 1.0.0-0.20130905git37ca83b.1.mga4
-+ Revision: 481370
-- sync with git
-
-* Mon Sep 02 2013 neoclust <neoclust> 1.0.0-0.1.gitea72b22.1.mga4
-+ Revision: 474292
-- Libify
-
-* Mon Sep 02 2013 joequant <joequant> 1.0.0-0.1.gitea72b22.mga4
-+ Revision: 474250
-- update to latest git version
-- imported package cinnamon-desktop
 
