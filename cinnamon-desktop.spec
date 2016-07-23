@@ -42,6 +42,8 @@ BuildRequires: pkgconfig(xkeyboard-config)
 BuildRequires: gtk-doc >= %{gtk_doc_version}
 BuildRequires: intltool
 BuildRequires: itstool
+BuildRequires: pkgconfig(libpulse)
+BuildRequires: pkgconfig(libpulse-mainloop-glib)
 
 %description
 
