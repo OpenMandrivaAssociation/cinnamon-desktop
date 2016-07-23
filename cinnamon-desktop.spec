@@ -7,15 +7,18 @@
 %global date				  20141107
 
 %define major   4
+%define cvcmaj  0
 %define girmajor   1.0
 %define libname %mklibname %{name} %{major}
+%define libcvcname %mklibname cvc %{cvcmaj}
+
 %define libdev  %mklibname %{name} -d
 %define girlib    %mklibname %{name}-gir %{girmajor}
 
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 2.6.2
+Version: 3.0.2
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -59,6 +62,16 @@ Libraries for %name
 
 #--------------------------------------------------------------------
 
+%package -n %libcvcname
+Summary:  Libraries for %name
+License:  LGPLv2+
+Group:    System/Libraries
+
+%description -n %libcvcname
+Libraries for %name
+
+#--------------------------------------------------------------------
+
 %package -n %{girlib}
 Summary: GObject introspection interface library for %{name}
 Group: System/Libraries
@@ -74,6 +87,7 @@ Summary:  Libraries and headers for libcinnamon-desktop
 License:  LGPLv2+
 Group:    Development/C
 Requires: %{libname} = %{version}-%{release}
+Requires: %{libcvcname} = %{version}-%{release}
 
 Requires: pkgconfig(gtk+-3.0)
 Requires: pkgconfig(glib-2.0)
@@ -110,12 +124,18 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %files -n %libname
 %{_libdir}/libcinnamon-desktop*.so.%{major}*
 
+%files -n %libcvcname
+%{_libdir}/libcvc.so.%{cvcmaj}*
+
 %files -n %{girlib}
-%{_libdir}/girepository-1.0/C*-3.0.typelib
+%{_libdir}/girepository-1.0/C*-*.0.typelib
 
 %files -n %libdev
 %{_libdir}/libcinnamon-desktop.so
+%{_libdir}/libcvc.so
 %{_libdir}/pkgconfig/cinnamon-desktop.pc
+%{_libdir}/pkgconfig/cvc.pc
 %{_includedir}/cinnamon-desktop/
-%{_datadir}/gir-1.0/C*-3.0.gir
+%{_datadir}/gir-1.0/C*-*.0.gir
+
 

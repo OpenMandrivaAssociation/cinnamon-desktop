@@ -1,4 +1,2 @@
-removed_sources:
-  cinnamon-desktop-2.4.2.tar.gz: b7fd6f50f3eee204a69515d40d37367c6e9fd30c
 sources:
-  cinnamon-desktop-2.6.2.tar.gz: 9c74e566405dfd05e575f26f7ede27a15077ce37
+  cinnamon-desktop-3.0.2.tar.gz: a79595448e846eae28df5cfc8a98daac0c6239f9
