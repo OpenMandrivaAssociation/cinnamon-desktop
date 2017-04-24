@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 3.0.2
+Version: 3.2.4
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -120,7 +120,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %files -f %{po_package}.lang
 %doc AUTHORS COPYING COPYING.LIB README
 %{_datadir}/glib-2.0/schemas/org.cinnamon.*.xml
-%{_libexecdir}/cinnamon-rr-debug
 %{_bindir}/cinnamon-desktop-migrate-mediakeys
 
 %files -n %libname
