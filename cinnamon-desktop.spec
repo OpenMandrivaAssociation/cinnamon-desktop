@@ -18,16 +18,13 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 3.2.4
+Version: 4.0.1
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
 URL:     http://cinnamon.linuxmint.com
 
 Source0: cinnamon-desktop-%{version}.tar.gz
-#SourceGet0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}.tar.gz
-#Source0: cinnamon-desktop-%{version}.git%{_internal_version}.tar.gz
-##SourceGet0: https://github.com/linuxmint/cinnamon-desktop/tarball/%{_internal_version}
 
 # Make sure that gnome-themes-standard gets pulled in for upgrades
 Requires: gnome-themes-standard
@@ -44,6 +41,7 @@ BuildRequires: intltool
 BuildRequires: itstool
 BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(libpulse-mainloop-glib)
+BuildRequires: meson
 
 %description
 
@@ -101,15 +99,13 @@ libcinnamondesktop.
 
 %prep
 %setup -q
-NOCONFIGURE=1 ./autogen.sh
 
 %build
-%configure --with-pnp-ids-path="%{_datadir}/misc/pnp.ids"
-sed -i -e 's! -shared ! -Wl,--as-needed\0!g' libtool
-%make V=1 
+%meson -Dpnp_ids="%{_datadir}/misc/pnp.ids"
+%meson_build
 
 %install
-%{make_install}
+%{meson_install}
 
 # stuff we don't want
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
