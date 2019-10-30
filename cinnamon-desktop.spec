@@ -116,7 +116,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %files -f %{po_package}.lang
 %doc AUTHORS COPYING COPYING.LIB README
 %{_datadir}/glib-2.0/schemas/org.cinnamon.*.xml
-%{_bindir}/cinnamon-desktop-migrate-mediakeys
 
 %files -n %libname
 %{_libdir}/libcinnamon-desktop*.so.%{major}*
