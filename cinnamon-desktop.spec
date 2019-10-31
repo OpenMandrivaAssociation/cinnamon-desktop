@@ -18,13 +18,13 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 4.0.1
+Version: 4.2.0
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
 URL:     http://cinnamon.linuxmint.com
 
-Source0: cinnamon-desktop-%{version}.tar.gz
+Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 
 # Make sure that gnome-themes-standard gets pulled in for upgrades
 Requires: gnome-themes-standard
@@ -116,7 +116,6 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %files -f %{po_package}.lang
 %doc AUTHORS COPYING COPYING.LIB README
 %{_datadir}/glib-2.0/schemas/org.cinnamon.*.xml
-%{_bindir}/cinnamon-desktop-migrate-mediakeys
 
 %files -n %libname
 %{_libdir}/libcinnamon-desktop*.so.%{major}*
