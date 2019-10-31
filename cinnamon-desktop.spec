@@ -24,7 +24,7 @@ License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
 URL:     http://cinnamon.linuxmint.com
 
-Source0: cinnamon-desktop-%{version}.tar.gz
+Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 
 # Make sure that gnome-themes-standard gets pulled in for upgrades
 Requires: gnome-themes-standard
