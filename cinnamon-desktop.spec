@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 4.4.1
+Version: 4.6.0
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -133,5 +133,3 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
 %{_libdir}/pkgconfig/cvc.pc
 %{_includedir}/cinnamon-desktop/
 %{_datadir}/gir-1.0/C*-*.0.gir
-
-
