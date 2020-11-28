@@ -30,6 +30,7 @@ Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name
 Requires: gnome-themes-standard
 
 BuildRequires: gnome-common
+BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(gtk+-3.0) >= %{gtk3_version}
 BuildRequires: gobject-introspection-devel
 BuildRequires: pkgconfig(glib-2.0) >= %{glib2_version}
