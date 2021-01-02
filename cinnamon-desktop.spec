@@ -19,7 +19,7 @@
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
 Version: 4.8.1
-Release: 1
+Release: 2
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
 URL:     http://cinnamon.linuxmint.com
