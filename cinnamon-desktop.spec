@@ -26,9 +26,6 @@ URL:     http://cinnamon.linuxmint.com
 
 Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 
-# Make sure that gnome-themes-standard gets pulled in for upgrades
-Requires: gnome-themes-standard
-
 BuildRequires: gnome-common
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(gtk+-3.0) >= %{gtk3_version}
