@@ -100,6 +100,8 @@ libcinnamondesktop.
 %setup -q
 
 %build
+export CC=gcc
+export CXX=g++
 %meson \
         -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
         -Dalsa=false
