@@ -102,7 +102,7 @@ libcinnamondesktop.
 %build
 %meson \
         -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
-        -Dalsa=true
+        -Dalsa=false
 %meson_build
 
 %install
