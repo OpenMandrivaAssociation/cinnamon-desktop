@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 5.2.1
+Version: 5.4.2
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -28,6 +28,7 @@ Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name
 
 BuildRequires: gnome-common
 BuildRequires: pkgconfig(alsa)
+BuildRequires: pkgconfig(accountsservice)
 BuildRequires: pkgconfig(gtk+-3.0) >= %{gtk3_version}
 BuildRequires: gobject-introspection-devel
 BuildRequires: pkgconfig(glib-2.0) >= %{glib2_version}
@@ -99,9 +100,12 @@ libcinnamondesktop.
 %setup -q
 
 %build
+# No longer compile with Clang due https://github.com/linuxmint/cinnamon-desktop/issues/210
+export CC=gcc
+export CXX=g++
 %meson \
         -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
-        -Dalsa=true
+        -Dalsa=false
 %meson_build
 
 %install
