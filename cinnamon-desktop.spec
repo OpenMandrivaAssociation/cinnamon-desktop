@@ -100,6 +100,7 @@ libcinnamondesktop.
 %setup -q
 
 %build
+# No longer compile with Clang due https://github.com/linuxmint/cinnamon-desktop/issues/210
 export CC=gcc
 export CXX=g++
 %meson \
