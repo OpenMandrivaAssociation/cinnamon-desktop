@@ -105,7 +105,7 @@ export CC=gcc
 export CXX=g++
 %meson \
         -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
-        -Dalsa=false
+        -Dalsa=true
 %meson_build
 
 %install
