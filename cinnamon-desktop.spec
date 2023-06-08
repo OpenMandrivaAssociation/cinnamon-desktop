@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 5.6.1
+Version: 5.8.0
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -101,8 +101,8 @@ libcinnamondesktop.
 
 %build
 # No longer compile with Clang due https://github.com/linuxmint/cinnamon-desktop/issues/210
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %meson \
         -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
         -Dalsa=true
