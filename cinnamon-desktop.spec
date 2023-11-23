@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 5.8.0
+Version: 6.0.0
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -29,12 +29,16 @@ Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name
 BuildRequires: gnome-common
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(accountsservice)
+BuildRequires: pkgconfig(libsystemd)
 BuildRequires: pkgconfig(gtk+-3.0) >= %{gtk3_version}
 BuildRequires: gobject-introspection-devel
 BuildRequires: pkgconfig(glib-2.0) >= %{glib2_version}
+BuildRequires: pkgconfig(gdk-pixbuf-2.0)
 BuildRequires: startup-notification-devel >= %{startup_notification_version}
 BuildRequires: pkgconfig(xkbfile)
 BuildRequires: pkgconfig(xkeyboard-config)
+BuildRequires: pkgconfig(x11)            
+BuildRequires: pkgconfig(xext)
 BuildRequires: gtk-doc >= %{gtk_doc_version}
 BuildRequires: intltool
 BuildRequires: itstool
