@@ -22,7 +22,7 @@ Version: 6.2.0
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
-URL:     http://cinnamon.linuxmint.com
+URL:     https://cinnamon.linuxmint.com
 
 Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 
