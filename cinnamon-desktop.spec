@@ -19,13 +19,14 @@
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
 Version: 6.4.1
-Release: 1
+Release: 2
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
 URL:     https://cinnamon.linuxmint.com
 
 Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires: mold
 BuildRequires: gnome-common
 BuildRequires: pkgconfig(alsa)
 BuildRequires: pkgconfig(accountsservice)
@@ -106,11 +107,11 @@ libcinnamondesktop.
 %setup -q
 
 %build
-# No longer compile with Clang due https://github.com/linuxmint/cinnamon-desktop/issues/210
-#export CC=gcc
-#export CXX=g++
+%global optflags %{optflags} -fuse-ld=mold
+export CC=gcc
+export CXX=g++
 %meson \
-        -Dpnp_ids="%{_datadir}/misc/pnp.ids" \
+        -Dpnp_ids="%{_datadir}/pnp.ids" \
         -Dalsa=true
 %meson_build
 
