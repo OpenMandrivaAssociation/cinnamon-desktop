@@ -25,6 +25,7 @@ Group:   Graphical desktop/Other
 URL:     https://cinnamon.linuxmint.com
 
 Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:   set_font_defaults.patch
 
 BuildRequires: mold
 BuildRequires: gnome-common
