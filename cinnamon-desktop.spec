@@ -18,7 +18,7 @@
 
 Summary: Shared code among cinnamon-session, nemo, etc
 Name:    cinnamon-desktop
-Version: 6.4.2
+Version: 6.6.1
 Release: 1
 License: GPLv2+ and LGPLv2+ add MIT
 Group:   Graphical desktop/Other
@@ -26,6 +26,9 @@ URL:     https://cinnamon.linuxmint.com
 
 Source0: https://github.com/linuxmint/cinnamon-desktop/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:   set_font_defaults.patch
+
+BuildSystem:   meson
+BuildOption:   -Dalsa=true
 
 BuildRequires: mold
 BuildRequires: gnome-common
@@ -43,7 +46,6 @@ BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xext)
 BuildRequires: gtk-doc >= %{gtk_doc_version}
 BuildRequires: intltool
-BuildRequires: itstool
 BuildRequires: pkgconfig(libpulse)
 BuildRequires: pkgconfig(libpulse-mainloop-glib)
 BuildRequires: meson
@@ -104,21 +106,7 @@ Requires: startup-notification-devel >= %{startup_notification_version}
 Libraries and header files for the CINNAMON-internal private library
 libcinnamondesktop.
 
-%prep
-%setup -q
-
-%build
-%global optflags %{optflags} -fuse-ld=mold
-export CC=gcc
-export CXX=g++
-%meson \
-        -Dpnp_ids="%{_datadir}/pnp.ids" \
-        -Dalsa=true
-%meson_build
-
-%install
-%{meson_install}
-
+%install -a
 # stuff we don't want
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
 rm -f $RPM_BUILD_ROOT%{_libdir}/*.a
